@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.animation as animation
 from mpl_toolkits.mplot3d import Axes3D
 
-r_x1x2 = 0.2
+r_x1x2 = 0.95
 mean3 = [0, 0, 0]
 cov3 = [[1, r_x1x2, 0.8], [r_x1x2, 1, 0.7], [0.8, 0.7, 1]]
 
@@ -32,9 +32,8 @@ for i in range(100):
     ys.append(yp)
     zs.append(zp)
 
-fig = plt.figure(figsize=(6, 5))
+fig = plt.figure(figsize=(5, 5))
 ax = Axes3D(fig)
-# ax = fig.add_subplot(111, projection='3d')
 ax.set_xlim(-3, 3)
 ax.set_ylim(-3, 3)
 ax.set_zlim(-3, 3)
@@ -54,6 +53,8 @@ def plot2(t, x1, x2, y, xs, ys, zs):
 
 ani = animation.FuncAnimation(fig, plot2,
                               fargs=(x1, x2, y, xs, ys, zs),
-                              interval=100)
+                              interval=200)
 
 plt.show()
+# w = animation.PillowWriter(fps=5)
+# ani.save('Regression_multico_multi.gif', writer=w)
