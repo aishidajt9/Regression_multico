@@ -5,9 +5,9 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.animation as animation
 from mpl_toolkits.mplot3d import Axes3D
 
-r_x1x2 = 0.95
+r_x1x2 = 0.9
 mean3 = [0, 0, 0]
-cov3 = [[1, r_x1x2, 0.8], [r_x1x2, 1, 0.7], [0.8, 0.7, 1]]
+cov3 = [[1, r_x1x2, 0.5], [r_x1x2, 1, 0.5], [0.5, 0.5, 1]]
 
 x1 = []
 x2 = []
