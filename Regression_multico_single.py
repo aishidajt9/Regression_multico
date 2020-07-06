@@ -22,6 +22,8 @@ def plot(t):
     yfit = model.predict(xfit[:, np.newaxis])
     im1 = plt.scatter(x, y)
     im2 = plt.plot(xfit, yfit, c="red")
+    plt.xlim(-3, 3)
+    plt.ylim(-3, 3)
 
 ani = animation.FuncAnimation(fig, plot, interval=100)
 plt.show()
